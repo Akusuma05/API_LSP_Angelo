@@ -16,6 +16,7 @@ class Motor extends Kendaraan
         'Kapasitas_Bensin'
     ];
 
+    //Function Hubungan Kenderaan Dengan Motor
     public function kendaraan()
     {
         return $this->hasOne(Kendaraan::class, 'Motor_ID', 'id');

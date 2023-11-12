@@ -1,3 +1,4 @@
+{{-- Halaman Utama Kenderaan --}}
 @extends('layouts.app')
 
 @section('content')

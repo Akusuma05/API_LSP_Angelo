@@ -58,6 +58,7 @@ class OrderController extends Controller
         $orders = Order::where('Order_ID', $id)->first();
         $kendaraan = Kendaraan::where('id', $orders->Kendaraan_ID)->first();
         
+        //Untuk return Data dari kendaraan yang berbeda2
         if($kendaraan->Jenis_Kendaraan == "Mobil"){
             $vehicle = Mobil::where('Mobil_ID', $orders->Kendaraan_ID)->first();
         } elseif ($kendaraan->Jenis_Kendaraan == "Truk") {

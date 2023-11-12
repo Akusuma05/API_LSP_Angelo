@@ -1,3 +1,4 @@
+{{-- Halaman Create Kendaraan --}}
 @extends('layouts.app')
 
 @section('content')

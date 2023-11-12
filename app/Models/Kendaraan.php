@@ -18,21 +18,25 @@ class Kendaraan extends Model
         'Jenis_Kendaraan',
     ];
 
+    //Function Hubungan Kenderaan Dengan Mobil
     public function mobil()
     {
         return $this->belongsTo(Mobil::class, 'id', 'Mobil_ID');
     }
 
+    //Function Hubungan Kenderaan Dengan Motor
     public function motor()
     {
         return $this->belongsTo(Motor::class, 'id', 'Motor_ID');
     }
 
+    //Function Hubungan Kenderaan Dengan Truck
     public function truck()
     {
         return $this->belongsTo(Truck::class, 'id', 'Truk_ID');
     }
 
+    //Function Hubungan Kenderaan Dengan Order
     public function order(){
         return $this->hasMany(Order::class, 'Kendaraan_ID', 'id');
     }

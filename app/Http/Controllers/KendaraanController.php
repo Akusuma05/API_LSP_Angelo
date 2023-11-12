@@ -36,7 +36,7 @@ class KendaraanController extends Controller
     {
          //Function Create Kendaraan
         $kenderaan = new Kendaraan();
-
+        
         $kenderaan->Model = $request->input('Model');
         $kenderaan->Tahun = $request->input('Tahun');
         $kenderaan->Jumlah_Penumpang = $request->input('Jumlah_Penumpang');
@@ -46,6 +46,7 @@ class KendaraanController extends Controller
         
         $kenderaan->save();
 
+        //If untuk beda2 input mobil, Motor, Truk
         if ($request->input('Jenis_Kendaraan') == "Mobil"){
             $car = new Mobil();
             $car->Mobil_ID = $kenderaan->id;
@@ -99,9 +100,11 @@ class KendaraanController extends Controller
      */
     public function update(Request $request, string $id)
     {
-         //Function Update Kendaraan
+        //Function Update Kendaraan
         $k = Kendaraan::where('id', $id)->first();
 
+        //If untuk Update Kendaraan + Mobil / Motor / Truk
+        //Apabila Mobil/Motor/Truk dirubah maka data lama akan di delete dan diganti dengan yang baru
         if($request->Jenis_Kendaraan == $k->Jenis_Kendaraan){
             Kendaraan::where('id', $id)->update([
                 'Model' => $request->Model,
@@ -133,10 +136,7 @@ class KendaraanController extends Controller
                     'Luas_Area_Kargo' => $request->Luas_Area_Kargo,
                 ]);
             }
-
         }else{
-            
-            
             if ($request->input('Jenis_Kendaraan') == "Mobil"){
                 if ($k->Jenis_Kendaraan == "Mobil"){
                     Mobil::where('Mobil_ID', $id)->delete();

@@ -1,3 +1,4 @@
+{{-- Halaman Edit Order --}}
 @extends('layouts.app')
 
 @section('content')
@@ -17,7 +18,8 @@
                                 @if ($kendaraans['id'] == $orders['Kendaraan_ID'])
                                     <option value="{{$kendaraans['id']}}"selected>{{ $kendaraans['Model'] }}</option>
                                 @else
-                                    <option value="{{$kendaraans['id']}}">{{ $kendaraans['Model'] }}</option>                               @endif
+                                    <option value="{{$kendaraans['id']}}">{{ $kendaraans['Model'] }}</option>                               
+                                @endif
                             @endforeach
                         </select>
                     </div>

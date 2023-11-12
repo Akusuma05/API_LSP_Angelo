@@ -1,3 +1,4 @@
+{{-- Halaman View spesifik Customer --}}
 @extends('layouts.app')
 
 @section('content')

@@ -18,6 +18,7 @@ class Customer extends Model
         'ID_Card'
     ];
 
+    //Function Hubungan Customer Dengan Order
     public function order(){
         return $this->hasMany(Order::class, 'Customer_ID', 'Customer_ID');
     }

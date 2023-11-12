@@ -1,3 +1,4 @@
+{{-- Halaman View Spesifik Kendaraan --}}
 @extends('layouts.app')
 
 @section('content')

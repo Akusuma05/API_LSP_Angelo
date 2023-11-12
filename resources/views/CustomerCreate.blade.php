@@ -1,3 +1,4 @@
+{{-- Halaman Create Customer --}}
 @extends('layouts.app')
 
 @section('content')

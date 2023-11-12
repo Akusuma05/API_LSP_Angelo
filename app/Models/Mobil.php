@@ -16,6 +16,7 @@ class Mobil extends Kendaraan
         'Luas_Bagasi'
     ];
 
+    //Function Hubungan Kenderaan Dengan Mobil
     public function kendaraan()
     {
         return $this->hasOne(Kendaraan::class, 'Mobil_ID', 'id');

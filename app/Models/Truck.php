@@ -16,6 +16,7 @@ class Truck extends Kendaraan
         'Jumlah_Roda_Ban'
     ];
 
+    //Function Hubungan Kenderaan Dengan Truck
     public function kendaraan()
     {
         return $this->hasOne(Kendaraan::class, 'Truk_ID', 'id');
